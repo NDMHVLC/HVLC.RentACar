@@ -1,0 +1,342 @@
+{
+  "format": 1,
+  "restore": {
+    "C:\\Users\\havla\\Desktop\\Work\\HVLC.RentACar\\HVLC.RentACar.Api\\HVLC.RentACar.Api.csproj": {}
+  },
+  "projects": {
+    "C:\\Users\\havla\\Desktop\\Work\\HVLC.RentACar\\HVLC.RentACar.Api\\HVLC.RentACar.Api.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\havla\\Desktop\\Work\\HVLC.RentACar\\HVLC.RentACar.Api\\HVLC.RentACar.Api.csproj",
+        "projectName": "HVLC.RentACar.Api",
+        "projectPath": "C:\\Users\\havla\\Desktop\\Work\\HVLC.RentACar\\HVLC.RentACar.Api\\HVLC.RentACar.Api.csproj",
+        "packagesPath": "C:\\Users\\havla\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\havla\\Desktop\\Work\\HVLC.RentACar\\HVLC.RentACar.Api\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\havla\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net5.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net5.0": {
+            "targetAlias": "net5.0",
+            "projectReferences": {
+              "C:\\Users\\havla\\Desktop\\Work\\HVLC.RentACar\\HVLC.RentACar.Service\\HVLC.RentACar.Service.csproj": {
+                "projectPath": "C:\\Users\\havla\\Desktop\\Work\\HVLC.RentACar\\HVLC.RentACar.Service\\HVLC.RentACar.Service.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net5.0": {
+          "targetAlias": "net5.0",
+          "dependencies": {
+            "Swashbuckle.AspNetCore": {
+              "target": "Package",
+              "version": "[5.6.3, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.AspNetCore.App": {
+              "privateAssets": "none"
+            },
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.101\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\havla\\Desktop\\Work\\HVLC.RentACar\\HVLC.RentACar.Data\\HVLC.RentACar.Data.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\havla\\Desktop\\Work\\HVLC.RentACar\\HVLC.RentACar.Data\\HVLC.RentACar.Data.csproj",
+        "projectName": "HVLC.RentACar.Data",
+        "projectPath": "C:\\Users\\havla\\Desktop\\Work\\HVLC.RentACar\\HVLC.RentACar.Data\\HVLC.RentACar.Data.csproj",
+        "packagesPath": "C:\\Users\\havla\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\havla\\Desktop\\Work\\HVLC.RentACar\\HVLC.RentACar.Data\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\havla\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net5.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net5.0": {
+            "targetAlias": "net5.0",
+            "projectReferences": {
+              "C:\\Users\\havla\\Desktop\\Work\\HVLC.RentACar\\HVLC.RentACar.Entities\\HVLC.RentACar.Entities.csproj": {
+                "projectPath": "C:\\Users\\havla\\Desktop\\Work\\HVLC.RentACar\\HVLC.RentACar.Entities\\HVLC.RentACar.Entities.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net5.0": {
+          "targetAlias": "net5.0",
+          "dependencies": {
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[5.0.0, )"
+            },
+            "Microsoft.EntityFrameworkCore.Design": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[5.0.0, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[5.0.0, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[5.0.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.101\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\havla\\Desktop\\Work\\HVLC.RentACar\\HVLC.RentACar.Entities\\HVLC.RentACar.Entities.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\havla\\Desktop\\Work\\HVLC.RentACar\\HVLC.RentACar.Entities\\HVLC.RentACar.Entities.csproj",
+        "projectName": "HVLC.RentACar.Entities",
+        "projectPath": "C:\\Users\\havla\\Desktop\\Work\\HVLC.RentACar\\HVLC.RentACar.Entities\\HVLC.RentACar.Entities.csproj",
+        "packagesPath": "C:\\Users\\havla\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\havla\\Desktop\\Work\\HVLC.RentACar\\HVLC.RentACar.Entities\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\havla\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net5.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net5.0": {
+            "targetAlias": "net5.0",
+            "projectReferences": {
+              "C:\\Users\\havla\\Desktop\\Work\\HVLC.RentACar\\Shared\\Shared.csproj": {
+                "projectPath": "C:\\Users\\havla\\Desktop\\Work\\HVLC.RentACar\\Shared\\Shared.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net5.0": {
+          "targetAlias": "net5.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.101\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\havla\\Desktop\\Work\\HVLC.RentACar\\HVLC.RentACar.Service\\HVLC.RentACar.Service.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\havla\\Desktop\\Work\\HVLC.RentACar\\HVLC.RentACar.Service\\HVLC.RentACar.Service.csproj",
+        "projectName": "HVLC.RentACar.Service",
+        "projectPath": "C:\\Users\\havla\\Desktop\\Work\\HVLC.RentACar\\HVLC.RentACar.Service\\HVLC.RentACar.Service.csproj",
+        "packagesPath": "C:\\Users\\havla\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\havla\\Desktop\\Work\\HVLC.RentACar\\HVLC.RentACar.Service\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\havla\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net5.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net5.0": {
+            "targetAlias": "net5.0",
+            "projectReferences": {
+              "C:\\Users\\havla\\Desktop\\Work\\HVLC.RentACar\\HVLC.RentACar.Data\\HVLC.RentACar.Data.csproj": {
+                "projectPath": "C:\\Users\\havla\\Desktop\\Work\\HVLC.RentACar\\HVLC.RentACar.Data\\HVLC.RentACar.Data.csproj"
+              },
+              "C:\\Users\\havla\\Desktop\\Work\\HVLC.RentACar\\HVLC.RentACar.Entities\\HVLC.RentACar.Entities.csproj": {
+                "projectPath": "C:\\Users\\havla\\Desktop\\Work\\HVLC.RentACar\\HVLC.RentACar.Entities\\HVLC.RentACar.Entities.csproj"
+              },
+              "C:\\Users\\havla\\Desktop\\Work\\HVLC.RentACar\\Shared\\Shared.csproj": {
+                "projectPath": "C:\\Users\\havla\\Desktop\\Work\\HVLC.RentACar\\Shared\\Shared.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net5.0": {
+          "targetAlias": "net5.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.101\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\havla\\Desktop\\Work\\HVLC.RentACar\\Shared\\Shared.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\havla\\Desktop\\Work\\HVLC.RentACar\\Shared\\Shared.csproj",
+        "projectName": "Shared",
+        "projectPath": "C:\\Users\\havla\\Desktop\\Work\\HVLC.RentACar\\Shared\\Shared.csproj",
+        "packagesPath": "C:\\Users\\havla\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\havla\\Desktop\\Work\\HVLC.RentACar\\Shared\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\havla\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net5.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net5.0": {
+            "targetAlias": "net5.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net5.0": {
+          "targetAlias": "net5.0",
+          "dependencies": {
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[5.0.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.101\\RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}

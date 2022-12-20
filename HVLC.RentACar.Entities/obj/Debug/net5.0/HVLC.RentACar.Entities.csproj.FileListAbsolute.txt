@@ -1,0 +1,15 @@
+C:\Users\havla\Desktop\Work\HVLC.RentACar\HVLC.RentACar.Entities\bin\Debug\net5.0\HVLC.RentACar.Entities.deps.json
+C:\Users\havla\Desktop\Work\HVLC.RentACar\HVLC.RentACar.Entities\bin\Debug\net5.0\HVLC.RentACar.Entities.dll
+C:\Users\havla\Desktop\Work\HVLC.RentACar\HVLC.RentACar.Entities\bin\Debug\net5.0\HVLC.RentACar.Entities.pdb
+C:\Users\havla\Desktop\Work\HVLC.RentACar\HVLC.RentACar.Entities\obj\Debug\net5.0\HVLC.RentACar.Entities.csproj.AssemblyReference.cache
+C:\Users\havla\Desktop\Work\HVLC.RentACar\HVLC.RentACar.Entities\obj\Debug\net5.0\HVLC.RentACar.Entities.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\havla\Desktop\Work\HVLC.RentACar\HVLC.RentACar.Entities\obj\Debug\net5.0\HVLC.RentACar.Entities.AssemblyInfoInputs.cache
+C:\Users\havla\Desktop\Work\HVLC.RentACar\HVLC.RentACar.Entities\obj\Debug\net5.0\HVLC.RentACar.Entities.AssemblyInfo.cs
+C:\Users\havla\Desktop\Work\HVLC.RentACar\HVLC.RentACar.Entities\obj\Debug\net5.0\HVLC.RentACar.Entities.csproj.CoreCompileInputs.cache
+C:\Users\havla\Desktop\Work\HVLC.RentACar\HVLC.RentACar.Entities\obj\Debug\net5.0\HVLC.RentACar.Entities.dll
+C:\Users\havla\Desktop\Work\HVLC.RentACar\HVLC.RentACar.Entities\obj\Debug\net5.0\refint\HVLC.RentACar.Entities.dll
+C:\Users\havla\Desktop\Work\HVLC.RentACar\HVLC.RentACar.Entities\obj\Debug\net5.0\HVLC.RentACar.Entities.pdb
+C:\Users\havla\Desktop\Work\HVLC.RentACar\HVLC.RentACar.Entities\obj\Debug\net5.0\ref\HVLC.RentACar.Entities.dll
+C:\Users\havla\Desktop\Work\HVLC.RentACar\HVLC.RentACar.Entities\bin\Debug\net5.0\Shared.dll
+C:\Users\havla\Desktop\Work\HVLC.RentACar\HVLC.RentACar.Entities\bin\Debug\net5.0\Shared.pdb
+C:\Users\havla\Desktop\Work\HVLC.RentACar\HVLC.RentACar.Entities\obj\Debug\net5.0\HVLC.RentACar.Entities.csproj.CopyComplete

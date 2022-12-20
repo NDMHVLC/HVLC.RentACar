@@ -1,0 +1,8 @@
+{
+  "runtimeOptions": {
+    "additionalProbingPaths": [
+      "C:\\Users\\havla\\.dotnet\\store\\|arch|\\|tfm|",
+      "C:\\Users\\havla\\.nuget\\packages"
+    ]
+  }
+}
