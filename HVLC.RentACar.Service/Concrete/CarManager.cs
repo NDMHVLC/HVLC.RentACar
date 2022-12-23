@@ -1,10 +1,12 @@
 ﻿using HVLC.RentACar.Data.Abstract;
 using HVLC.RentACar.Entities.Concrete;
 using HVLC.RentACar.Entities.Dtos;
+using HVLC.RentACar.Entities.Mapping;
 using HVLC.RentACar.Service.Abstract;
 using Shared.Result;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace HVLC.RentACar.Service.Concrete
 {
@@ -18,24 +20,24 @@ namespace HVLC.RentACar.Service.Concrete
         }
 
         public DataResult<List<CarDto>> GetAll()
-        {
-            var cars = _unitOfWork.Cars.GetAll();
+        {            
+            var cars = (from c in _unitOfWork.Cars.GetAll()
+                       join cs in _unitOfWork.CarServicess.GetAll()
+                       on c.CarServiceId equals cs.Id
+                       select new CarDto
+                       {
+                           Id = c.Id,
+                           KM = c.KM,
+                           Brand = c.Brand,
+                           Model = c.Model,
+                           FuelType = c.FuelType,
+                           CarServiceId = c.CarServiceId,
+                           CarService = cs.ToDto(),
+                       }).ToList();
+
             if (cars.Count > 0)
             {
-                List<CarDto> carDtos = new();
-                foreach (var item in cars)
-                {
-                    carDtos.Add(new CarDto
-                    {
-                        Id = item.Id,
-                        KM = item.KM,
-                        Brand = item.Brand,
-                        Model = item.Model,
-                        FuelType = item.FuelType,
-                        CarServiceId = item.CarServiceId,
-                    });
-                }
-                return new DataResult<List<CarDto>>(200, carDtos, null);
+                return new DataResult<List<CarDto>>(200, cars, null);
             }
             else
             {
@@ -47,14 +49,7 @@ namespace HVLC.RentACar.Service.Concrete
         {
             try
             {
-                _unitOfWork.Cars.Add(new Car
-                {
-                    KM = carAddDto.KM,
-                    Brand = carAddDto.Brand,
-                    Model = carAddDto.Model,
-                    FuelType = carAddDto.FuelType,
-                    CarServiceId = carAddDto.CarServiceId,
-                });
+                _unitOfWork.Cars.Add(carAddDto.ToEntity());
 
                 _unitOfWork.Save();
 
@@ -115,19 +110,7 @@ namespace HVLC.RentACar.Service.Concrete
         {
             try
             {
-                Car currentCar = _unitOfWork.Cars.Get(c => c.Id == carGetDto.Id);
-
-                CarDto carDto = new()
-                {
-                    Id = currentCar.Id,
-                    KM = currentCar.KM,
-                    Brand = currentCar.Brand,
-                    Model = currentCar.Model,
-                    FuelType = currentCar.FuelType,
-                    CarServiceId = currentCar.CarServiceId
-                };
-
-                return new DataResult<CarDto>(200, carDto, null);
+                return new DataResult<CarDto>(200, _unitOfWork.Cars.Get(c => c.Id == carGetDto.Id).ToDto(), null);
             }
             catch (Exception ex)
             {

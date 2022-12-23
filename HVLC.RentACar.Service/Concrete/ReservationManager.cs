@@ -1,6 +1,7 @@
 ﻿using HVLC.RentACar.Data.Abstract;
 using HVLC.RentACar.Entities.Concrete;
 using HVLC.RentACar.Entities.Dtos;
+using HVLC.RentACar.Entities.Mapping;
 using HVLC.RentACar.Service.Abstract;
 using Shared.Result;
 using System;
@@ -23,15 +24,7 @@ namespace HVLC.RentACar.Service.Concrete
         {
             try
             {
-                _unitOfWork.Reservations.Add(new Reservation
-                {
-                    RentalDate=reservationAddDto.RentalDate,
-                    DeliveryDate=reservationAddDto.DeliveryDate,
-                    StartingKm=reservationAddDto.StartingKm,
-                    FinishKm=reservationAddDto.FinishKm,
-                    Comment=reservationAddDto.Comment,
-                    CarId=reservationAddDto.CarId,
-                });
+                _unitOfWork.Reservations.Add(reservationAddDto.ToEntity());
                 _unitOfWork.Save();
 
                 return new Result(200, new List<string>() { "Rezervasyon kaydı başarılı bir şekilde eklenmiştir" });
@@ -50,7 +43,7 @@ namespace HVLC.RentACar.Service.Concrete
                 _unitOfWork.Reservations.HardDelete(currentReservation);
                 _unitOfWork.Save();
 
-                return new Result(200, new List<string>() { "Rezervasyon kaydı başarılı bir şekilde silindi."});
+                return new Result(200, new List<string>() { "Rezervasyon kaydı başarılı bir şekilde silindi." });
             }
             catch (Exception ex)
             {
@@ -62,19 +55,7 @@ namespace HVLC.RentACar.Service.Concrete
         {
             try
             {
-                Reservation currentReservation = _unitOfWork.Reservations.Get(r => r.Id == reservationGetDto.Id);
-                ReservationDto reservationDto = new()
-                {
-                    Id=currentReservation.Id,
-                    RentalDate=currentReservation.RentalDate,
-                    DeliveryDate=currentReservation.DeliveryDate,
-                    StartingKm=currentReservation.StartingKm,
-                    FinishKm=currentReservation.FinishKm,
-                    Comment=currentReservation.Comment,
-                    CarId=currentReservation.CarId,
-                };
-
-                return new DataResult<ReservationDto>(200, reservationDto, null);
+                return new DataResult<ReservationDto>(200, _unitOfWork.Reservations.Get(r => r.Id == reservationGetDto.Id).ToDto(), null);
             }
             catch (Exception ex)
             {
@@ -84,24 +65,23 @@ namespace HVLC.RentACar.Service.Concrete
 
         public DataResult<List<ReservationDto>> GetAll()
         {
-            var reservation = _unitOfWork.Reservations.GetAll();
-            if (reservation.Count>0)
+            var reservation = (from r in _unitOfWork.Reservations.GetAll()
+                               join c in _unitOfWork.Cars.GetAll()
+                               on r.CarId equals c.Id
+                               select new ReservationDto
+                               {
+                                   Id = r.Id,
+                                   RentalDate= r.RentalDate,
+                                   DeliveryDate= r.DeliveryDate,
+                                   StartingKm= r.StartingKm,
+                                   FinishKm= r.FinishKm,
+                                   Comment= r.Comment,
+                                   CarId=r.CarId,
+                                   Car=c.ToDto(),
+                               }).ToList();
+            if (reservation.Count > 0)
             {
-                List<ReservationDto> reservationDtos = new();
-                foreach (var item in reservation)
-                {
-                    reservationDtos.Add(new ReservationDto
-                    {
-                        RentalDate = item.RentalDate,
-                        DeliveryDate = item.DeliveryDate,
-                        StartingKm = item.StartingKm,
-                        FinishKm = item.FinishKm,
-                        Comment = item.Comment,
-                        CarId = item.CarId,
-                    });
-                }
-
-                return new DataResult<List<ReservationDto>>(200, reservationDtos, null);
+                return new DataResult<List<ReservationDto>>(200, reservation, null);
             }
             else
             {
@@ -115,13 +95,13 @@ namespace HVLC.RentACar.Service.Concrete
             {
                 Reservation currentReservation = _unitOfWork.Reservations.Get(r => r.Id == reservationUpdateDto.Id);
                 currentReservation.RentalDate = reservationUpdateDto.RentalDate;
-                currentReservation.DeliveryDate= reservationUpdateDto.DeliveryDate;
-                currentReservation.StartingKm= reservationUpdateDto.StartingKm;
-                currentReservation.FinishKm= reservationUpdateDto.FinishKm;
-                currentReservation.Comment= reservationUpdateDto.Comment;
-                currentReservation.CarId= reservationUpdateDto.CarId;
+                currentReservation.DeliveryDate = reservationUpdateDto.DeliveryDate;
+                currentReservation.StartingKm = reservationUpdateDto.StartingKm;
+                currentReservation.FinishKm = reservationUpdateDto.FinishKm;
+                currentReservation.Comment = reservationUpdateDto.Comment;
+                currentReservation.CarId = reservationUpdateDto.CarId;
                 currentReservation.ModifedBy = 1;
-                currentReservation.ModifedDate=DateTime.Now;
+                currentReservation.ModifedDate = DateTime.Now;
 
                 _unitOfWork.Reservations.Update(currentReservation);
                 _unitOfWork.Save();

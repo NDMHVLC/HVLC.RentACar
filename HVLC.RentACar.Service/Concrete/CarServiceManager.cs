@@ -2,6 +2,7 @@
 using HVLC.RentACar.Entities.Concrete;
 using HVLC.RentACar.Entities.Dtos;
 using HVLC.RentACar.Service.Abstract;
+using HVLC.RentACar.Entities.Mapping;
 using Shared.Result;
 using System;
 using System.Collections.Generic;
@@ -23,13 +24,7 @@ namespace HVLC.RentACar.Service.Concrete
         {
             try
             {
-                _unitOfWork.CarServicess.Add(new CarService
-                {
-                    EntryDate = carServiceAddDto.EntryDate,
-                    ReleaseDate = carServiceAddDto.ReleaseDate,
-                    Comment = carServiceAddDto.Comment
-                });
-
+                _unitOfWork.CarServicess.Add(carServiceAddDto.ToEntity());
                 _unitOfWork.Save();
 
                 return new Result(200, new List<string>() { "Araba bakımı başarılı bir şekilde eklenmiştir" });
@@ -62,17 +57,7 @@ namespace HVLC.RentACar.Service.Concrete
         {
             try
             {
-                CarService currentCarService = _unitOfWork.CarServicess.Get(cs => cs.Id == carServiceGetDto.Id);
-
-                CarServiceDto carServiceDto = new()
-                {
-                    Id = currentCarService.Id,
-                    EntryDate = currentCarService.EntryDate,
-                    ReleaseDate= currentCarService.ReleaseDate,
-                    Comment= currentCarService.Comment,
-                };
-
-                return new DataResult<CarServiceDto>(200, carServiceDto, null);
+                return new DataResult<CarServiceDto>(200, _unitOfWork.CarServicess.Get(cs=>cs.Id==carServiceGetDto.Id).ToDto(), null);
             }
             catch (Exception ex)
             {
@@ -85,17 +70,7 @@ namespace HVLC.RentACar.Service.Concrete
             var carServices = _unitOfWork.CarServicess.GetAll();
             if (carServices.Count > 0)
             {
-                List<CarServiceDto> carServiceDtos = new();
-                foreach (var item in carServices)
-                {
-                    carServiceDtos.Add(new CarServiceDto
-                    {
-                        EntryDate = item.EntryDate,
-                        ReleaseDate = item.ReleaseDate,
-                        Comment = item.Comment,
-                    });
-                }
-                return new DataResult<List<CarServiceDto>>(200, carServiceDtos, null);
+                return new DataResult<List<CarServiceDto>>(200, carServices.ToDto().ToList(), null);
             }
             else
             {

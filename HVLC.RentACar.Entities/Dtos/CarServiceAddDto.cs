@@ -15,7 +15,7 @@ namespace HVLC.RentACar.Entities.Dtos
 
         [DisplayName("Açıklama")]
         [Required(ErrorMessage = "{0} alanı boş geçilemez")]
-        [MinLength(20, ErrorMessage = "{0} alanı {1} karakterden büyük olamaz")]
+        [MinLength(20, ErrorMessage = "{0} alanı {1} karakterden küçük olamaz")]
         public string Comment { get; set; }
 
     }
