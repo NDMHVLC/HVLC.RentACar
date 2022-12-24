@@ -39,7 +39,7 @@ namespace HVLC.RentACar.Api.Controllers
         }
 
         [HttpPost]
-        [Route("ReservatiaonAdd")]
+        [Route("ReservationAdd")]
         public Result ReservationAdd(ReservationAddDto reservationAddDto)
         {
             return reservationManager.Add(reservationAddDto);

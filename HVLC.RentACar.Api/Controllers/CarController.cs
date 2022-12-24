@@ -28,8 +28,8 @@ namespace HVLC.RentACar.Api.Controllers
 
         [HttpPost]
         [Route("CarGetList")]
-        public DataResult<CarDto> CarGetList([FromBody] CarGetDto carGetDto)
-        {
+        public DataResult<CarDto> CarGetList(CarGetDto carGetDto)
+        {           
             return carManager.Get(carGetDto);
         }
 
