@@ -1,0 +1,11 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\HVLC.RentACar.Data",
+    "\\HVLC.RentACar.Data\\Concrete",
+    "\\HVLC.RentACar.Data\\Concrete\\EntityFramework",
+    "\\HVLC.RentACar.Data\\Concrete\\EntityFramework\\Contexts"
+  ],
+  "SelectedNode": "\\HVLC.RentACar.Api",
+  "PreviewInSolutionExplorer": false
+}

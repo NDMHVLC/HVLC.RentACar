@@ -63,6 +63,19 @@ namespace HVLC.RentACar.Service.Concrete
             }
         }
 
+        public DataResult<ReservationDto> GetLastReservation()
+        {
+            try
+            {
+                var result = _unitOfWork.Reservations.GetLastReservationByDate().ToDto();
+                return new DataResult<ReservationDto>(200, result, null);
+            }
+            catch (Exception ex)
+            {
+                return new DataResult<ReservationDto>(500, null, new List<string>() { "Teknik bir hata oluştu" }, ex);
+            }
+        }
+
         public DataResult<List<ReservationDto>> GetAll()
         {
             var reservation = (from r in _unitOfWork.Reservations.GetAll()
@@ -71,13 +84,13 @@ namespace HVLC.RentACar.Service.Concrete
                                select new ReservationDto
                                {
                                    Id = r.Id,
-                                   RentalDate= r.RentalDate,
-                                   DeliveryDate= r.DeliveryDate,
-                                   StartingKm= r.StartingKm,
-                                   FinishKm= r.FinishKm,
-                                   Comment= r.Comment,
-                                   CarId=r.CarId,
-                                   Car=c.ToDto(),
+                                   RentalDate = r.RentalDate,
+                                   DeliveryDate = r.DeliveryDate,
+                                   StartingKm = r.StartingKm,
+                                   FinishKm = r.FinishKm,
+                                   Comment = r.Comment,
+                                   CarId = r.CarId,
+                                   Car = c.ToDto(),
                                }).ToList();
             if (reservation.Count > 0)
             {
@@ -113,6 +126,37 @@ namespace HVLC.RentACar.Service.Concrete
             {
                 return new Result(200, new List<string>() { "Rezervasyon kaydı güncellenirken teknik bir hata oluştu" }, ex);
             }
+        }
+
+
+        public DataResult<List<ReservationDto>> GetAllLastReservation(int count)
+        {
+            try
+            {
+                var reservations = (from r in _unitOfWork.Reservations.GetAll()
+                                   join c in _unitOfWork.Cars.GetAll()
+                                   on r.CarId equals c.Id
+                                   select new ReservationDto
+                                   {
+                                       Id = r.Id,
+                                       RentalDate = r.RentalDate,
+                                       DeliveryDate = r.DeliveryDate,
+                                       StartingKm = r.StartingKm,
+                                       FinishKm = r.FinishKm,
+                                       Comment = r.Comment,
+                                       CreatedDate = r.CreatedDate,
+                                       CarId = r.CarId,
+                                       Car = c.ToDto(),
+                                   }).OrderByDescending(x=>x.CreatedDate).Take(count).ToList();
+                return new DataResult<List<ReservationDto>>(200, reservations, new List<string> { "Başarılı" });
+
+            }
+            catch (Exception ex)
+            {
+
+                throw;
+            }
+
         }
     }
 }

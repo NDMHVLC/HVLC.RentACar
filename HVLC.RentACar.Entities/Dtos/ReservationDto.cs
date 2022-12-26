@@ -15,6 +15,7 @@ namespace HVLC.RentACar.Entities.Dtos
         public double StartingKm { get; set; }
         public double FinishKm { get; set; }
         public string Comment { get; set; }
+        public DateTime? CreatedDate { get; set; }
 
         public int CarId { get; set; }
         public CarDto Car { get; set; }

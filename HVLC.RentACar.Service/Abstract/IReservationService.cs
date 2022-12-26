@@ -15,5 +15,7 @@ namespace HVLC.RentACar.Service.Abstract
         Result Delete(ReservationDeleteDto reservationDeleteDto);
         DataResult<List<ReservationDto>> GetAll();
         DataResult<ReservationDto> Get(ReservationGetDto reservationGetDto);
+        DataResult<ReservationDto> GetLastReservation();
+        DataResult<List<ReservationDto>> GetAllLastReservation(int count);
     }
 }

@@ -9,7 +9,7 @@ namespace HVLC.RentACar.Entities.Concrete
 {
     public class Customer : EntityBase
     {
-        public double TcNo { get; set; }
+        public double? TcNo { get; set; }
         public string Name { get; set; }
         public string Surname { get; set; }
         public string EMail { get; set; }

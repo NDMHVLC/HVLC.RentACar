@@ -10,6 +10,6 @@ namespace HVLC.RentACar.Data.Abstract
 {
     public interface IReservationRepository : IRepository<Reservation>
     {
-
+        Reservation GetLastReservationByDate();
     }
 }

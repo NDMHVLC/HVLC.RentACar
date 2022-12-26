@@ -32,6 +32,13 @@ namespace HVLC.RentACar.Api.Controllers
         }
 
         [HttpPost]
+        [Route("LastReservationGet")]
+        public DataResult<ReservationDto> LastReservationGet()
+        {
+            return reservationManager.GetLastReservation();
+        }
+
+        [HttpPost]
         [Route("ReservationUpdate")]
         public Result ReservationUpdate(ReservationUpdateDto reservationUpdateDto)
         {
